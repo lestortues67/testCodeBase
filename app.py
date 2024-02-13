@@ -31,6 +31,8 @@ from flask_debugtoolbar import DebugToolbarExtension
 
 #bipbip carotte !!!
 
+#test à 11h29
+
 locale.setlocale(locale.LC_TIME,'')
 
 app = Flask(__name__)
