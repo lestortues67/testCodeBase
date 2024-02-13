@@ -1,0 +1,121 @@
+{% extends "MyBase.html" %}
+
+
+{% block content %}
+
+
+
+<form action="/page" method="post" >
+  <label>Résumé/entête :</label>
+  <input class="form-control form-control-sm" type="text" placeholder="Résumé/entête" name="resume" >
+  <label>Date de création:</label>
+  <input class="form-control form-control-sm" type="text" placeholder="Date de création" name="dateDeCreation" >
+  <label>Auteur:</label>
+  <input class="form-control form-control-sm" type="text" placeholder="Auteur" name="auteur">
+  <label>Description:</label>
+  <input class="form-control form-control-sm" type="text" placeholder="Description" name="description">
+  <label>Terminé ? :</label>
+  <fieldset>
+    <div>
+      <input type="radio" name="termine" value="en cours"
+             checked>
+      <label class="text-warning" for="huey">En cours</label>
+    </div>
+
+    <div>
+      <input type="radio" name="termine" value="terminé">
+      <label class="text-success" for="dewey">Terminé</label>
+    </div>
+
+    <div>
+      <input type="radio" name="termine" value="pas commencer">
+      <label class="text-danger" for="louie">Pas commencer</label>
+    </div>
+</fieldset>  
+  <label>Btn édition:</label>
+  <input class="form-control form-control-sm" type="text" placeholder="Btn édition" name="btnEdit">
+
+  <button class="btn btn-light" type="submit">envoyer</button>
+</form>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<div class="container">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Résumé/Entête</th>
+      <th scope="col">Date de création</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Description</th>
+      <th scope="col">Terminé ?</th>
+      <th scope="col">Modifier</th>
+    </tr>
+  </thead>
+  <tbody id="mesLignes">
+    {% for item in data %}
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.resume }}</td>
+      <td>{{ item.dateCreation }}</td>
+      <td>{{ item.auteur }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.termine }}</td>
+      <td><button class="btn btn-light" value="{{ item.id }}">Modifier{{ item.btnEdit }}</button></td>
+
+    </tr>
+
+    {% endfor %}
+    
+  </tbody>
+</table> 
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+  <script type="text/javascript" src="static/page.js"></script>
+{% endblock %}
+
+{% block poubelle %}
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
