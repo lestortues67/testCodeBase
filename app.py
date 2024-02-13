@@ -29,6 +29,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 
 #mardi 13 février 2024 !!!
 
+#bipbip carotte !!!
 
 locale.setlocale(locale.LC_TIME,'')
 
